@@ -1,0 +1,5 @@
+base:
+  '*':
+    - mysql
+    - django
+    - uwsgi

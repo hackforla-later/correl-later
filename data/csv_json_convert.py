@@ -15,7 +15,7 @@ def csv2json(filepath):
     fl = open(filepath, "rU")
     reader = csv.DictReader(fl)
     patharr = str.split(filepath, '/')
-    linetitle = patharr[len(patharr)-1]
+    linetitle = str.split(patharr[len(patharr)-1], '.')[0]
 
     for row in reader:
         for key in row:
@@ -42,11 +42,11 @@ def csv2json(filepath):
     return line
 
 if len(sys.argv) >= 2:
-    filename = sys.argv[1]
+    filepath = sys.argv[1]
 else:
-    print "Please add name of file in raw_csv as argument (with .csv)"
+    print "Please add relevant or full path of csv file as argument (with '.csv')"
 
 # example 
-jsondata = csv2json(filepath="raw_csv/" + filename)
+jsondata = csv2json(filepath=filepath)
 
 print json.dumps(jsondata)

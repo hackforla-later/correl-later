@@ -14,5 +14,9 @@
     {
         "title": "LA Consumer Price Index",
         "file": "LosAngelese_Year_CPI.json"
+    },
+    {
+    	"title": "Water Transportation Energy Usage",
+    	"file": "WaterTransportationEnergyUsage.json"
     }
 ]

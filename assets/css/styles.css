@@ -212,11 +212,11 @@ nav ul li a:hover, nav ul li a:focus { text-decoration: none; color: rgba(255, 2
 /* ==========================================================================
 Hero
 ========================================================================== */
-.hero { background: url('../img/logo.png') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding: 65px 0 300px 0; height: auto; }
+.hero {background: url('../img/Los-Angeles.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding: 5px 0 10px 0; height: auto; }
 .hero h1 { font-size: 40px; letter-spacing: 12px; margin: 10px; }
 .hero h1 span { color: #a1a9b0; display: inline-block; }
 .hero p { letter-spacing: 1px; }
-.learn-more-btn { background: rgba(61, 201, 179, 1); padding: 20px 40px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; color: #fff; text-transform: uppercase; letter-spacing: 1px; display: inline-block; -webkit-box-shadow: 0px 3px 0px 0px #309383; -moz-box-shadow: 0px 3px 0px 0px #309383; box-shadow: 0px 3px 0px 0px #309383; margin: 60px 0 0; font-weight: bold; }
+.learn-more-btn { background: rgba(61, 201, 179, 1); padding: 20px 20px; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; color: #fff; text-transform: uppercase; letter-spacing: 1px; display: inline-block; -webkit-box-shadow: 0px 3px 0px 0px #309383; -moz-box-shadow: 0px 3px 0px 0px #309383; box-shadow: 0px 3px 0px 0px #309383; margin: 60px 0 0; font-weight: bold; }
 .learn-more-btn:hover, .learn-more-btn:focus { background: rgba(61, 201, 179, 0.6); color: #fff; }
 /* ==========================================================================
 Intro
@@ -239,11 +239,11 @@ iPhone Section
 /* ==========================================================================
 Swag
 ========================================================================== */
-.swag { background: url('../img/plants-bg.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-attachment: fixed; padding: 50px 0; }
-.swag h1 { color: #fff; font-size: 40px; text-transform: uppercase; letter-spacing: 5px; }
-.swag h1 span { display: block; font-size: 25px; margin-top: 20px; }
-.down-arrow-btn { width: 40px; height: 40px; border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%; -o-border-radius: 50%; background: rgba(61, 201, 179, 0.8); display: inline-block; margin: 10px auto 20px; color: #fff; font-size: 16px; line-height: 40px; text-align: center; }
-.down-arrow-btn:hover, .down-arrow-btn:focus { color: #fff; background: rgba(61, 201, 179, 1); }
+.swag { background: url('../img/after.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-attachment: fixed; padding: 250px 0; }
+.swag h1 { color: #fff; font-size: 40px; text-transform: uppercase; letter-spacing: 5px; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+.swag h1 span { display: block; font-size: 40px; margin-top: 20px; color:#3bb7f7; }
+.down-arrow-btn { width: 40px; height: 40px; border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%; -o-border-radius: 50%; background: rgba(59, 183, 247, 0.8); display: inline-block; margin: 10px auto 20px; color: #fff; font-size: 16px; line-height: 40px; text-align: center; }
+.down-arrow-btn:hover, .down-arrow-btn:focus { color: #fff; background: rgba(59, 183, 247, 1); }
 /* ==========================================================================
 Portfolio
 ========================================================================== */
@@ -267,9 +267,9 @@ a.expand { display: block; position: absolute; z-index: 100; text-align: center;
 /* ==========================================================================
 Subscribe
 ========================================================================== */
-.subscribe { background: url('../img/keyboard-bg.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-attachment: fixed; padding: 120px 0 140px; }
+.subscribe { background: url('../img/before.jpg') no-repeat center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-attachment: fixed; padding: 230px 0 230px; }
 .subscribe h1 { color: #fff; margin-bottom: 40px; }
-.subscribe h1 span { display: block; font-size: 15px; text-transform: uppercase; font-weight: bold; margin-top: 20px; letter-spacing: 1px; }
+.subscribe h1 span { display: block; font-size: 30px; text-transform: uppercase; font-weight: bold; margin-top: 20px; letter-spacing: 1px; letter-spacing: 5px;}
 .subscribe input[type=text] { background-color: rgba(255, 255, 255, 0.1); border: solid 1px #fff; padding: 20px; width: 30%; color: #fff; }
 .subscribe input[type=submit] { background: rgba(61, 201, 179, 0.5); border: solid 1px rgba(61, 201, 179, 0.5); padding: 20px; color: #fff; text-transform: uppercase; letter-spacing: 1px; transition: all 0.5s ease; -moz-transition: all 0.5s ease; -webkit-transition: all 0.5s ease; -o-transition: all 0.5s ease; }
 .subscribe input[type=submit]:hover { background: rgba(61, 201, 179, 1); border: solid 1px rgba(61, 201, 179, 1); color: #fff; }
@@ -277,8 +277,8 @@ Subscribe
 CTA
 ========================================================================== */
 .ignite-cta { background-color: #242830; padding: 70px 0; }
-.ignite-btn { display: inline-block; padding: 25px 40px; color: #fff; border: solid 1px #fff; text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
-.ignite-btn:hover, .ignite-btn:focus { color: #3dc9b3; border: solid 1px #3dc9b3; }
+.ignite-btn { display: inline-block; padding: 25px 1vw; color: #fff; border: solid 1px #fff; text-transform: uppercase; font-weight: bold; font-size: 1.2vw; letter-spacing: 1px; width: 25%;}
+.ignite-btn:hover, .ignite-btn:focus { color: #3bb7f7; border: solid 1px #3bb7f7; font-size: 1.2vw; width: 26%; }
 /* ==========================================================================
 Team
 ========================================================================== */
@@ -302,7 +302,7 @@ Contact
 Footer
 ========================================================================== */
 footer a { color: #a1a9b0; }
-footer { background-color: #242830; padding: 40px 0 30px; }
+footer { background-color: #fff; padding: 70px 0 70px; }
 footer p { color: #fff; }
 ul.legals { list-style: none; color: #fff; line-height: 25px; }
 ul.legals li { display: inline-block; }
@@ -310,6 +310,15 @@ ul.legals li::after { content: " |"; }
 ul.legals li:last-child::after { content: ""; }
 .legals { text-align: left; }
 .credit { text-align: right; }
+/* ==========================================================================
+Graphs
+========================================================================== */
+.graph { display:inline-block; border: 1px solid white; ; width: 95%; padding: 20px; text-align: center; height: 200px; color: white; background-color: #242830; outline: antiquewhite solid thick; border-radius: 10px; transition: width 500ms;
+}
+.graph:hover, .graph:focus { background-color: white; width: 100%; color: #242830; border: 2px solid #242830;
+}
+.graph-contain { color: aliceblue; background-color: antiquewhite; width: 100%; padding: 50px; overflow: hidden; text-align: center; position: relative; border-radius: 10px;} 
+}
 /* ==========================================================================
 FlexSlider Custom CSS
 ========================================================================== */
@@ -321,5 +330,5 @@ Waypoints
 .wp1, .wp2, .wp3, .wp4, .wp5, .wp6 { visibility: hidden; }
 .bounceInLeft, .bounceInRight, .fadeInUp, .fadeInUpDelay, .fadeInDown, .fadeInUpD, .fadeInLeft, .fadeInRight { visibility: visible; }
 .delay-05s { animation-delay: 0.5s; -webkit-animation-delay: 0.5s; }
-.delay-1s { animation-delay: 1s; -webkit-animation-delay: 1s; }
+.delay-500ms { animation-delay: 500ms; -webkit-animation-delay: 500ms; }
 .wp3 { background: url('../img/rainroom.png') no-repeat center center; background-position: 200px 10px; height: 100%; }

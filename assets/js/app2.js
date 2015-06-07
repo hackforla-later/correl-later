@@ -19,6 +19,15 @@ $( document ).ready(function() {
     var monthlyDroughtData = getDroughtData("monthly");
     var yearlyDroughtData = getDroughtData("yearly");
 
+    var updateSelect = function(chartId, chartTitle) {
+        $("#charts-list").append("<option class='" + chartId + "'>Water Abundance Score vs. " + chartTitle + "</option>");
+    };
+
+    $("#charts-list").bind('change', function() {
+        var chart = $(this).find(":selected");
+        window.location = "#" + chart.attr("class");
+    });
+
     var renderData = function() {
         $.ajax({
             url: "data/_index.json",
@@ -35,6 +44,7 @@ $( document ).ready(function() {
                 });
             }
             for (var i=0; i < charts["yearly"].length; i++) {
+                var ts = new Date().getTime();
                 $.ajax({
                     url: "data/converted_json/yearly/" + charts["yearly"][i].file,
                     type: "GET",
@@ -49,8 +59,9 @@ $( document ).ready(function() {
     var addHCGraph = function(droughtData, secondary, id) {
         var seconds = new Date().getTime();
         $("#charts-content").append("<div id='" + id + seconds + "'></div>");
+        updateSelect(id + seconds, secondary[0]["yAxisLabel"]);
 
-        $("div#" + id + seconds).highcharts({
+        $("div#chart" + seconds).highcharts({
             chart: {
                 zoomType: 'xy'
             },

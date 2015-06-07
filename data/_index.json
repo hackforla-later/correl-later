@@ -1,7 +1,7 @@
 {
     "monthly": [
         {
-            "title": "dow",
+            "title": "Dow Jones Index",
             "file": "dow.json"
         },
         {

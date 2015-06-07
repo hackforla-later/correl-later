@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from unipath import Path
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -21,6 +22,7 @@ SECRET_KEY = 'jb#aqghjvwmdktn#f96q!)e6)siu$j33z719_*jp)4@pa)f=g('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+PROJECT_DIR = Path(__file__).ancestor(2)
 
 TEMPLATE_DEBUG = True
 
@@ -71,6 +73,15 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+# template search path
+TEMPLATE_DIRS = (
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    PROJECT_DIR.child("templates"),
+)
+
 
 TIME_ZONE = 'UTC'
 

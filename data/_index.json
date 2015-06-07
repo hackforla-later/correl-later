@@ -23,7 +23,11 @@
 		{
 			"title": "LA County Crime Rates",
 			"file": "crime_rates.json"
-		}
+		},
+        {
+            "title": "UFO Sightings",
+            "file": "UFO.json"
+        }
     ],
     "yearly": [
         {

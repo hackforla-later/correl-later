@@ -4,11 +4,15 @@
         "file":"dow.json"
     },
     {
-        "title": "dow2",
-        "file": "dow.json"
+        "title": "LA Gas Prices Year",
+        "file": "LAGasPricesYear.json"
     },
     {
-    	"title": "unemployment",
-    	"file": "UnemploymentPercentage.json"
+        "title": "LAX Departures",
+        "file": "LAXDepartures.json"
+    },
+    {
+        "title": "LA Consumer Price Index",
+        "file": "LosAngelese_Year_CPI.json"
     }
 ]

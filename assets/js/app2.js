@@ -3,7 +3,7 @@ $( document ).ready(function() {
     var getDroughtData = function() {
         var data = null;
         $.ajax({
-            url: "data/drought.json",
+            url: "data/converted_json/drought.json",
             type: "GET",
             dataType: "json",
             async: false
@@ -26,7 +26,7 @@ $( document ).ready(function() {
         }).success(function(charts) {
             for (var i=0; i < charts.length; i++) {
                 $.ajax({
-                    url: "data/" + charts[i].file,
+                    url: "data/converted_json/" + charts[i].file,
                     type: "GET",
                     dataType: "json"
                 }).success(function(secondary) {

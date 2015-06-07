@@ -30,19 +30,17 @@ $( document ).ready(function() {
                     type: "GET",
                     dataType: "json"
                 }).success(function(secondary) {
-                    addHCGraph(droughtData, secondary, "chart" + i);
+                    addHCGraph(droughtData, secondary, "chart");
                 });
             }
         });
     };
 
     var addHCGraph = function(droughtData, secondary, id) {
-        var chart = $("div");
-        chart.attr("id", id);
-        $("#charts div:first-child").append(chart);
+        var seconds = new Date().getTime();
+        $("#charts-content").append("<div id='" + id + seconds + "'></div>");
 
-
-        chart.highcharts({
+        $("div#" + id + seconds).highcharts({
             chart: {
                 zoomType: 'xy'
             },
@@ -62,27 +60,27 @@ $( document ).ready(function() {
             yAxis: [
                 { // Primary yAxis
                     labels: {
-                        format: droughtData[0]["yAxisLabel"],
+                        format: "{value}",
                         style: {
                             color: Highcharts.getOptions().colors[1]
                         }
                     },
                     title: {
-                        text: droughtData[0]["key"],
+                        text: secondary[0]["key"],
                         style: {
                             color: Highcharts.getOptions().colors[1]
                         }
                     }
                 },
                 { // Secondary yAxis
-                    title: {
-                        text: secondary[0]["yAxisLabel"],
+                    labels: {
+                        format: "{value}",
                         style: {
                             color: Highcharts.getOptions().colors[0]
                         }
                     },
-                    labels: {
-                        format: secondary[0]["key"],
+                    title: {
+                        text: droughtData[0]["key"],
                         style: {
                             color: Highcharts.getOptions().colors[0]
                         }
@@ -104,19 +102,19 @@ $( document ).ready(function() {
             },
             series: [
                 {
-                    name: droughtData[0],
+                    name: droughtData[0]["key"],
                     type: 'spline',
                     yAxis: 1,
                     data: droughtData[0]["values"]
                 },
                 {
-                    name: secondary[0],
+                    name: secondary[0]["key"],
                     type: 'spline',
-                    yAxis: 2,
                     data: secondary[0]["values"]
                 }
             ]
         })
+        .after("<hr>")
     };
 
 

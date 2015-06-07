@@ -1,17 +1,24 @@
 $( document ).ready(function() {
 
     var getDroughtData = function() {
+        var data = null;
         $.ajax({
-            url: "data/drought.json",
+            url: "data/drought_data_d3.json",
             type: "GET",
             dataType: "json",
             async: false
-        }).success(function(data) {
-            return data.respsonseJSON;
+        }).success(function(d) {
+            return data = d;
         }).error(function() {
             return [];
         });
+
+        return data;
     };
+
+
+
+    var droughtData = getDroughtData();
 
     var renderData = function() {
         $.ajax({
@@ -56,7 +63,8 @@ $( document ).ready(function() {
 
             d3.select("#charts div:first-child")
                 .append("svg")
-                .datum(data)
+                .attr("class", id)
+                .datum([droughtData[0], data[0]])
                 .call(chart);
 
             nv.utils.windowResize(chart.update);

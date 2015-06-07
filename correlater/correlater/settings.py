@@ -23,6 +23,7 @@ SECRET_KEY = 'jb#aqghjvwmdktn#f96q!)e6)siu$j33z719_*jp)4@pa)f=g('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 PROJECT_DIR = Path(__file__).ancestor(2)
+print PROJECT_DIR
 
 TEMPLATE_DEBUG = True
 
@@ -96,3 +97,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = PROJECT_DIR.ancestor(1).child("static")
+STATICFILES_DIRS = (
+    ('assets', PROJECT_DIR.child("assets")),
+)
+
+print PROJECT_DIR.child("assets")

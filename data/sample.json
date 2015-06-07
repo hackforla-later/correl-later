@@ -1,7 +1,7 @@
 [
   {
     "key": "Drought",
-    "mean": 125,
+    "yAxisLabel": "Sample",
     "values": [
       [
         1107147600000.0,

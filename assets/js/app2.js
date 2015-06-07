@@ -3,7 +3,7 @@ $( document ).ready(function() {
     var getDroughtData = function() {
         var data = null;
         $.ajax({
-            url: "data/drought_data_d3.json",
+            url: "data/drought.json",
             type: "GET",
             dataType: "json",
             async: false
@@ -15,8 +15,6 @@ $( document ).ready(function() {
 
         return data;
     };
-
-
 
     var droughtData = getDroughtData();
 
@@ -31,14 +29,98 @@ $( document ).ready(function() {
                     url: "data/" + charts[i].file,
                     type: "GET",
                     dataType: "json"
-                }).success(function(chart) {
-                    addGraph(chart, "chart" + i);
+                }).success(function(secondary) {
+                    addHCGraph(droughtData, secondary, "chart" + i);
                 });
             }
         });
     };
 
-    var addGraph = function(data, id) {
+    var addHCGraph = function(droughtData, secondary, id) {
+        var chart = $("div");
+        chart.attr("id", id);
+        $("#charts div:first-child").append(chart);
+
+
+        chart.highcharts({
+            chart: {
+                zoomType: 'xy'
+            },
+            title: {
+                text: "Drought vs. " + secondary[0]["key"]
+            },
+            xAxis: {
+                type: 'datetime',
+                dateTimeLabelFormats: { // don't display the dummy year
+                    month: '%e. %b',
+                    year: '%b'
+                },
+                title: {
+                    text: 'Date'
+                }
+            },
+            yAxis: [
+                { // Primary yAxis
+                    labels: {
+                        format: droughtData[0]["yAxisLabel"],
+                        style: {
+                            color: Highcharts.getOptions().colors[1]
+                        }
+                    },
+                    title: {
+                        text: droughtData[0]["key"],
+                        style: {
+                            color: Highcharts.getOptions().colors[1]
+                        }
+                    }
+                },
+                { // Secondary yAxis
+                    title: {
+                        text: secondary[0]["yAxisLabel"],
+                        style: {
+                            color: Highcharts.getOptions().colors[0]
+                        }
+                    },
+                    labels: {
+                        format: secondary[0]["key"],
+                        style: {
+                            color: Highcharts.getOptions().colors[0]
+                        }
+                    },
+                    opposite: true
+                }
+            ],
+            tooltip: {
+                shared: true
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'left',
+                x: 120,
+                verticalAlign: 'top',
+                y: 100,
+                floating: true,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+            },
+            series: [
+                {
+                    name: droughtData[0],
+                    type: 'spline',
+                    yAxis: 1,
+                    data: droughtData[0]["values"]
+                },
+                {
+                    name: secondary[0],
+                    type: 'spline',
+                    yAxis: 2,
+                    data: secondary[0]["values"]
+                }
+            ]
+        })
+    };
+
+
+    var addNvd3Graph = function(data, id) {
         nv.addGraph(function () {
             var chart = nv.models.cumulativeLineChart()
                 .useInteractiveGuideline(true)

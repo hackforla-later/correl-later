@@ -1,22 +1,31 @@
 $( document ).ready(function() {
 
+    
     nv.addGraph(function() {
         var chart = nv.models.cumulativeLineChart()
             .useInteractiveGuideline(true)
-            .x(function(d) { return d[0] })
-            .y(function(d) { return d[1]/100 })
-            .color(d3.scale.category10().range())
-            .duration(300)
-            .clipVoronoi(false);
+            .x(function(d) { return parseFloat(d[0])})
+            .y(function(d) { return d[1] })
+
         chart.dispatch.on('renderEnd', function() {
             console.log('render complete: cumulative line with guide line');
         });
 
         chart.xAxis.tickFormat(function(d) {
-            return d3.time.format('%m/%d/%y')(new Date(d))
+            var minute = 60000;
+            var date_temp = new Date(d*1000 );
+            date_temp =   new Date( date_temp.getTime() + ( date_temp.getTimezoneOffset() * minute ) );
+            return d3.time.format('%m/%d/%y')(date_temp)
         });
 
-        chart.yAxis.tickFormat(d3.format(''));
+
+        chart.xAxis.axisLabel('Date')
+
+
+
+        chart.yAxis.tickFormat(d3.format("%"));
+
+        chart.yAxis.axisLabel('Percent of Drought')
 
         d3.select('#chart1 svg')
             .datum(cumulativeTestData())
@@ -32,16 +41,18 @@ $( document ).ready(function() {
         return chart;
     });
 
-
+   
     function cumulativeTestData() {
-
-        var ajax_call = $.ajax({
-            url: "data/sample.json",
+       
+       var ajax_call = $.ajax({
+            url: "data/drought_data_d3.json",
             type: "GET",
             dataType: "json",
             async: false
         });
+                
 
         return ajax_call.responseJSON;
+       
     }
 });

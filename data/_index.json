@@ -15,7 +15,15 @@
         {
             "title": "LA Consumer Price Index",
             "file": "LosAngelese_Year_CPI.json"
-        }
+        },
+		{
+			"title": "LA Unemployment Rates",
+			"file": "UnemploymentPercentage.json"
+		},
+		{
+			"title": "LA County Crime Rates",
+			"file": "crime_rates.json"
+		}
     ],
     "yearly": [
         {

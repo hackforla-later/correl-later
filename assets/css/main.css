@@ -4,3 +4,8 @@ svg {
   padding: 0;
   min-height: 500px;
 }
+
+.chart-separator {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}

@@ -110,7 +110,7 @@ $( document ).ready(function() {
                 }
             ]
         })
-        .after("<hr>")
+        .after("<hr class='chart-separator'>")
     };
 
 

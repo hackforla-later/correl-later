@@ -1,9 +1,9 @@
 $( document ).ready(function() {
 
-    var getDroughtData = function() {
+    var getDroughtData = function(dir) {
         var data = null;
         $.ajax({
-            url: "data/converted_json/drought.json",
+            url: "data/converted_json/" + dir + "/drought.json",
             type: "GET",
             dataType: "json",
             async: false
@@ -16,7 +16,8 @@ $( document ).ready(function() {
         return data;
     };
 
-    var droughtData = getDroughtData();
+    var monthlyDroughtData = getDroughtData("monthly");
+    var yearlyDroughtData = getDroughtData("yearly");
 
     var renderData = function() {
         $.ajax({
@@ -24,13 +25,22 @@ $( document ).ready(function() {
             type: "GET",
             dataType: "json"
         }).success(function(charts) {
-            for (var i=0; i < charts.length; i++) {
+            for (var i=0; i < charts["monthly"].length; i++) {
                 $.ajax({
-                    url: "data/converted_json/" + charts[i].file,
+                    url: "data/converted_json/monthly/" + charts["monthly"][i].file,
                     type: "GET",
                     dataType: "json"
                 }).success(function(secondary) {
-                    addHCGraph(droughtData, secondary, "chart");
+                    addHCGraph(monthlyDroughtData, secondary, "chart");
+                });
+            }
+            for (var i=0; i < charts["yearly"].length; i++) {
+                $.ajax({
+                    url: "data/converted_json/yearly/" + charts["yearly"][i].file,
+                    type: "GET",
+                    dataType: "json"
+                }).success(function(secondary) {
+                    addHCGraph(yearlyDroughtData, secondary, "chart");
                 });
             }
         });

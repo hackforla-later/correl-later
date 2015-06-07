@@ -1,7 +1,0 @@
-# include from common.txt
--r common.txt
-
-# dev only stuff
-django-rest-swagger==0.2.9
-django-silk==0.5.2
-fabric==1.10.1

@@ -1,2 +1,0 @@
-from correlater.correlater import *
-

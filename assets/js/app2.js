@@ -69,7 +69,7 @@ $( document ).ready(function() {
                 text: "Drought vs. " + secondary[0]["key"]
             },
             subtitle: {
-                text: "r = " + secondary[0]["correlation"] ? secondary[0].hasOwnProperty("correlation") : ""
+                text: secondary[0].hasOwnProperty("correlation") ? "r = " + secondary[0]["correlation"] : ""
             },
             xAxis: {
                 type: 'datetime',
